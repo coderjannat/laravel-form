@@ -13,9 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/', function () {
-    return '<h1>Hello from the other side</h1>';
+    return view('welcome');
+});
+Route::get('/store/{catagory?}/{item?}', function ($catagory = null, $item = null) {
+    if (isset($catagory)) {
+        if (isset($item)) {
+            return 'catagory---' . ($catagory) . '--and item--' . ($item);
+        }
+        return "catagory {$catagory}";
+    }
+
+    return 'nothing';
 });
