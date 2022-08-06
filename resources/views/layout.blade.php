@@ -396,28 +396,18 @@
             }
         }
     </style>
-
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
-        .p-4 {
-            padding: 1rem;
-        }
-        nav a {
-            padding: .5rem;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url('css/site.css') }}">
 </head>
 
 <body class="antialiased">
     <div class="relative p-4">
 
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-    </nav>
+        <nav>
+            <a href="{{ route('home.index' )}}">Home</a>
+            <a href="{{ route('guitars.index') }}">Guitars</a>
+            <a href="{{ route('home.about' )}}">About</a>
+            <a href="{{ route('home.contact' )}}">Contact</a>
+        </nav>
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             @yield('content')
